@@ -14,6 +14,12 @@ projects = [
 ,{"title":"Clothing Store Annual Report Analysis - Data Analytics", "desc": "Conducted data analysis of Clothing Store’s annual sales segmented by gender, age group, channel, month and state.\n Created visualizations and reports using Excel, identifying key sales trends and providing strategic recommendations. \n Delivered in-depth insights to enhance targeted marketing strategies, driving improvements in product offerings and customer engagement"}
 ]
 
+experiences = [
+    {"title":"LEARN KOVALENT | Market Research and AI Analytics","desc" : "Conducted market research and used AI analytics tools to identify trends, providing actionable insights for strategies. Collaborated with teams to design data collection methods, analyzing large datasets to support key business decisions. Utilized machine learning models to forecast market trends, enhancing predictive accuracy for targeted marketing campaigns."},
+    {"title":"PREDICTRAM | Financial Research Analyst","desc":"Conducted in-depth research and analysis of financial events, providing actionable insights for fintech decision-making processes. Authored comprehensive reports on economic indicators, including inflation, money supply and industrial production for stakeholders. Collaborated with cross-functional teams, utilizing data-driven approaches to deliver clear, concise, and impactful content for audiences"}
+    
+]
+
 @app.route("/new_post", methods=["GET", "POST"])
 def new_post():
     if request.method == "POST":
@@ -61,7 +67,7 @@ def blog():
 @app.route("/")
 def home():
 
-    return render_template("home.html",projects=projects)
+    return render_template("home.html",projects=projects,experiences = experiences)
 # (Optional) define other routes if needed, e.g., a dedicated page for contact
 # For now, we might handle contact form on home itself via a POST route.
 @app.route("/contact", methods=["POST"])
