@@ -17,6 +17,36 @@ With expertise in MATLAB, R, Python, SQL, and Excel, I specialize in data analys
 
 I am actively seeking opportunities in finance and data analytics, where I can contribute my analytical skills and macroeconomic understanding to create meaningful impact. Let's connect and explore possibilities!</p>
 </section>
+</section>
+    </section>
+    <section id="Experience" class="container my-5">
+        <h2>Experience</h2>
+        <div class="row">
+            <div class="row">
+                {% for exp in experiences %}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ exp.title }}</h5>
+                                <p class="card-text">{{ exp.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
 <section id="projects" class="container my-5">
 <h2>Projects</h2>
 <div class="row">
