@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Ayushi - Home{% endblock %}
+{% block content %}
+<!-- Hero header section -->
+<header class="text-center bg-secondary text-white p-5">
+<h1>Ayushi Tripathi</h1>
+<p class="lead">Aspiring Economist and Data Scientist</p>
+</header>
+
+
+
+<section id="about" class="container my-5">
+<h2>About Me</h2>
+<p>I am an economics enthusiast with special interest in macroeconomics. I am looking for opportunities in the finance and data analytics world. My skills include tools like MATLAB, R, Python, SQL and Excel.</p>
+</section>
+<section id="projects" class="container my-5">
+<h2>Projects</h2>
+<div class="row">
+<!-- Projects as cards as earlier -->
+    <div class="row">
+{% for proj in projects %}
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<h5 class="card-title">{{ proj.title }}</h5>
+<p class="card-text">{{ proj.desc }}</p>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</section>
+<section id="contact" class="container my-5">
+<h2>Contact Me</h2>
+<!-- Contact form -->
+<form action="{{ url_for('contact') }}" method="POST" class="mb-3">
+<!-- fields... (same as before, just ensure action points to Flask route) -->
+<div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name">
+        </div>
+        <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Your Email">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="message" class="form-control" placeholder="Your Message">
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+</form>
+<p>Email: <a href="mailto:youremail@example.com">youremail@example.
+com</a></p>
+</section>
+{% endblock %}
